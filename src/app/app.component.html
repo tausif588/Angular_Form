@@ -1,0 +1,89 @@
+<div class="row">
+  <div class="col-md-12">
+    <form #loginForm="ngForm" (ngSubmit)="userlogin(loginForm.value)">
+      <h1>Sign Up</h1>
+
+      <fieldset>
+        <legend><span class="number">1</span> Your Basic Info</legend>
+
+        <label for="name">First_Name:</label>
+        <input  type="text" id="name" pattern="[a-zA-Z]+$" name="user_name1" #name="ngModel" required ngModel  />
+        <span class="lock" *ngIf="name.invalid  && name.touched">Please enter a valid Name</span>
+
+        <label for="name">Last_Name:</label>
+        <input  type="text" id="name" pattern="[a-zA-Z]+$" name="user_name2" #name="ngModel" required ngModel  />
+        <span class="lock" *ngIf="name.invalid  && name.touched">Please enter a valid Name</span>
+
+        <label for="email">Mobile No:</label>
+        <input type="tel" pattern="[0-9]{10}" id="mail" #mobile="ngModel" required name="user_mobile" ngModel />
+        <span class="lock" *ngIf="mobile.invalid  && mobile.touched">Please enter a valid Mobile_No</span>
+
+        <label for="email">Email:</label>
+        <input type="email"pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" id="mail" #email="ngModel" required name="user_email" ngModel />
+        <span class="lock" *ngIf="email.invalid  && email.touched">Please enter a valid Email</span> 
+
+        <label for="password">Password:</label>
+        <input type="password" minlength="6" maxlength="10" id="password" #password="ngModel" required name="user_password" ngModel />
+        <span class="lock" *ngIf="password.invalid  && password.touched">Please enter a valid Password minimum length is 6</span>
+
+        <label>Age:</label>
+        <input
+          type="radio"
+          id="under_18"
+          value="under_18"
+          name="user_age" ngModel />
+          <label for="under_18" class="light">Under 18</label><br />
+        <input
+          type="radio"
+          id="over_18"
+          value="over_18"
+          name="user_age"  ngModel/> 
+         <label for="over_18" class="light">Over 18</label>
+      </fieldset>
+      <fieldset>
+        <legend><span class="number">2</span> Your Profile</legend>
+
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="user_bio" #bio="ngModel" required ngModel></textarea>
+        <span class="lock" *ngIf="bio.invalid && bio.touched">Please Enter A Valid Text Message</span>
+
+        <label for="job">Job Role:</label>
+        <select id="job" name="user_job" #job="ngModel" required ngModel>
+          <optgroup label="Web">
+            <option id="first" value="frontend_developer" name="job" >Front-End Developer</option>
+            <option value="php_developer" name="job" >PHP Developer</option>
+            <option value="python_developer" name="job" >Python Developer</option>
+            <option value="rails_developer" name="job" >Rails Developer</option>
+            <option value="web_designer" name="job">Web Designer</option>
+            <option value="wordpress_developer" name="job">Wordpress Developer</option>
+        </select>
+        <span class="lock" *ngIf="job.invalid && job.touched">Please Select A Valid Option </span>
+
+        <label>Interests:</label>
+        <input
+          type="checkbox"
+          id="development"
+          value="interest_development"
+          name="user_interest1"
+           ngModel/>
+          <label value="interest_development"  class="light" for="development">Development</label><br />
+        <input
+          type="checkbox"
+          id="design"
+          value="interest_design"
+          name="user_interest2"
+           ngModel/>
+        <label class="light" for="design">Design</label><br />
+        <input
+        type="checkbox"
+        id="Business"
+        value="interest_development"
+        name="user_interest3"  ngModel/> 
+        <label class="light" for="business">Business</label>
+
+      </fieldset>
+
+      <button  [disabled]="loginForm.invalid" type="submit">Sign Up</button>
+    </form>
+  </div>
+</div>
