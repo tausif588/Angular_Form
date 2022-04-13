@@ -1,6 +1,7 @@
 # DemoApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13![screenshot](https://user-images.githubusercontent.com/59610308/163242195-01a2e2d0-cb4f-4f74-9494-1c5963f9dc8b.png)
+.3.2.
 
 ## Development server
 
